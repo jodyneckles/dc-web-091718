@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -113,4 +115,37 @@ def game_hash
       ]
     }
   }
+end
+
+def get_all_players
+  # returns array of all players
+  game_hash[:home][:players] + game_hash[:away][:players]
+end
+
+
+def get_player_info(player_to_find)
+  # finds matching player
+  get_all_players.find do |player|
+      player[:player_name] == player_to_find
+  end
+end
+
+def num_points_scored(player_to_find)
+  # returns number of points scored for given player name
+    return get_player_info(player_to_find)[:points]
+end
+
+def shoe_size(player_to_find)
+  return get_player_info(player_to_find)[:shoe]
+end
+
+def team_colors(team_name_to_find)
+  # returns array of team colors
+  # binding.pry
+  game_hash.values.each do |team_info|
+    if team_info[:team_name] == team_name_to_find
+      return team_info[:colors]
+    end
+  end
+
 end
