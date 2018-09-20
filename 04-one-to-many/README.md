@@ -15,9 +15,9 @@
   * `#initialize` which takes a username and has a reader method for the username
   * `#tweets` that returns an array of Tweet instances
   * `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
-  
+
 * Create a Tweet class. The class should have these methods:
   * `Tweet#message` that returns a string
   * `Tweet#user` that returns an instance of the user class. i.e., the instance of the object
-  * `Tweet.all` that returns all the Tweets created.
+  * `Tweet.all` that returns all the Tweets created. (class method)
   * `Tweet#username` that returns the username of the tweet's user, i.e., the string of the username
