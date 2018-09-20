@@ -13,8 +13,10 @@ class Tweet
 
     def self.all
         # returns all Tweets
-        # binding.pry
-
         @@all
+    end
+
+    def username
+        self.user.username
     end
 end
