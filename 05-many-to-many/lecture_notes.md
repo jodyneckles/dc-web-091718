@@ -1,0 +1,2 @@
+- Talk about how to give help (weightlifting )
+- Community game night tonight
