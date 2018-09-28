@@ -1,27 +1,14 @@
 require 'bundler'
 Bundler.require
 
-DB = SQLite3::Database.new('db/library.db')
+# DB = SQLite3::Database.new('db/library.db')
 
 require_relative '../lib/book.rb'
 require_relative '../lib/author.rb'
 
+ActiveRecord::Base.establish_connection(
+  adapter: 'sqlite3',
+  database: "db/library.db"
+)
 
-# module SQLite3
-
-#     class Database
-
-#         def initialize(database_location)
-#             @database_location = database_location
-#         end
-
-
-#         def execute(sql)
-#             # executes sql
-#         end
-
-#     end
-
-# end
-
-# DB.execute("SELECT * FROM books")
+ActiveRecord::Base.logger = Logger.new(STDOUT)
