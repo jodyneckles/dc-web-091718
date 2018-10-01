@@ -1,4 +1,4 @@
-With a partner/group:
+With a partner or group:
 
 1.  Write the SQL to create tables for Books (id, title, author_id) and Authors (id, name)
 
