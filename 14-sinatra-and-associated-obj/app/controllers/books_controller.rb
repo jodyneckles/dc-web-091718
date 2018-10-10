@@ -1,11 +1,6 @@
-class ApplicationController < Sinatra::Base
+class BooksController < ApplicationController
 
-    set :views, "app/views"
-    set :method_override, true
-
-    get "/" do
-        erb :home
-    end
+    set :views, "app/views/books"
 
     get "/books" do 
         @books = Book.all
@@ -13,6 +8,7 @@ class ApplicationController < Sinatra::Base
     end
 
     get "/books/new" do 
+        @authors = Author.all
         erb :new
     end
     
@@ -24,9 +20,10 @@ class ApplicationController < Sinatra::Base
 
     post "/books" do
         title = params["title"]
-        author = params["author"]
+        author_id = params["author"]
         snippet = params["snippet"]
-        book = Book.create(title: title, author: author, snippet: snippet)
+        binding.pry
+        book = Book.create(title: title, author: author_id, snippet: snippet)
         redirect "books/#{book.id}"
     end
 
