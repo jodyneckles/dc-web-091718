@@ -21,9 +21,9 @@ class BooksController < ApplicationController
     post "/books" do
         title = params["title"]
         author_id = params["author"]
+        author = Author.find(author_id)
         snippet = params["snippet"]
-        binding.pry
-        book = Book.create(title: title, author: author_id, snippet: snippet)
+        book = Book.create(title: title, author: author, snippet: snippet)
         redirect "books/#{book.id}"
     end
 

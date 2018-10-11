@@ -1,0 +1,23 @@
+<h1>Create an author</h1>
+
+<form action="/authors" method="POST">
+    <label name="first_name">First Name</label>
+    <input type="text" name="first_name">
+    <label name="last_name">Last Name</label>
+    <input type="text" name="last_name">
+
+    <h3>Some books by this author:</h3>
+    <div>
+        <input type="text" name="book[][title]" placeholder="Title">
+        <input type="textarea" name="book[][snippet]" placeholder="A summary of the book">
+    </div>
+    <div>
+        <input type="text" name="book[][title]" placeholder="Title">
+        <input type="textarea" name="book[][snippet]" placeholder="A summary of the book">
+    </div>
+    <div>
+        <input type="text" name="book[][title]" placeholder="Title">
+        <input type="textarea" name="book[][snippet]" placeholder="A summary of the book">
+    </div>
+    <input type="submit">
+</label>
