@@ -4,3 +4,7 @@
 <% @snacks.each do |snack| %>
     <li><%= link_to snack.name, snack_path(snack) %></li>
 <% end %>
+
+<div id="new_snack">
+    <%= link_to "Create a new snack", new_snack_path %>
+</div>
