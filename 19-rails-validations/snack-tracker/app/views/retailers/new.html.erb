@@ -1,3 +1,5 @@
+<%= render partial: "shared/error_list", locals: {object: @retailer} %>
+
 <%= form_for @retailer do |r| %>
     <%= r.label :name %>
     <%= r.text_field :name %>
@@ -5,8 +7,7 @@
     <%= r.number_field :year_established %>
 
     <h2>Snacks</h2>
-        <% 3.times do %>
-            <%= r.fields_for :snacks do |snack| %>
+        <%= r.fields_for :snacks do |snack| %>
                 <div>
                     <%= snack.label :name %>
                     <%= snack.text_field :name %>
@@ -15,7 +16,7 @@
                     <%= snack.label :deliciousness %>
                     <%= snack.select :deliciousness, (1..10) %>
                 </div>
-            <% end %>
         <% end %>
     <%= r.submit %>
 <% end %>
+

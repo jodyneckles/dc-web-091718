@@ -18,7 +18,11 @@ class SnacksController < ApplicationController
 
   def create
     @snack = Snack.create(snack_params)
-    redirect_to snack_path(@snack)
+    if @snack.errors.any?
+      # render :new
+    else
+      redirect_to snack_path(@snack)
+    end
   end
 
   def edit
