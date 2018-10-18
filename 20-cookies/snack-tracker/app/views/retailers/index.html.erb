@@ -1,5 +1,7 @@
 <h1>Retailer Index Page</h1>
 
+<h2>My favorite cookie flavor is: <%= cookies["favorite"] %></h2>
+
 <ul>
 <% @retailers.each do |retailer| %>
     <li><%= link_to retailer.name, retailer_path(retailer) %></li>
