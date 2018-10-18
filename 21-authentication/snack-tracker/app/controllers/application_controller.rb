@@ -9,7 +9,12 @@ class ApplicationController < ActionController::Base
         if @current_user
             @current_user
         else
-            @current_user = User.find(session[:user_id]).username
+            if session[:user_id]    
+                @current_user = User.find(session[:user_id]).username
+            else
+                @current_user = nil
+
+            end
         end
     end
 end
