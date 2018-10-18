@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Super Duper SnackTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">
+
+      <% if session["user_id"] %>
+        <h1>Welcome <%= current_user %></h1>
+        <%= link_to "Logout", logout_path, method: "DELETE" %>
+      <% else %>
+        <%= link_to "Login", login_path %>
+      <% end %>
+
+    <%= yield %>
+  </body>
+</html>

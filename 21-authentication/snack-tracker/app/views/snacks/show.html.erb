@@ -1,0 +1,6 @@
+<h1><%= @snack.name %></h1>
+
+<div>Calories: <%= @snack.calories %></div>
+<div>Deliciousness: <%= @snack.deliciousness %></div>
+<%= link_to @snack.retailer.name, retailer_path(@snack.retailer) %>
+<%= link_to "Index Page", snacks_path %>
