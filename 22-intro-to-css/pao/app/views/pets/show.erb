@@ -1,0 +1,17 @@
+<h1 id="pet_name"><%= @pet.name %></h1>
+<h3 class="pet_labels"><%= @pet.species %></h3>
+<h3 class="pet_labels"><%= @pet.age %></h3>
+
+<h2 class="pet_labels">Owner</h2>
+<% @pet.owners.each do |owner| %>
+  <%= link_to owner.name, owner %>
+<% end %>
+<br>
+
+
+<button class="pet_links">
+<%= link_to "Edit", edit_pet_path %>
+</button>
+<button class="pet_links">
+<%= link_to "Delete", @pet, method: :delete, data: { confirm: "Really?" } %>
+</button>

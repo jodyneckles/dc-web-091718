@@ -1,0 +1,30 @@
+// Place all the styles related to the Owners controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// /* Owner Index =========================== */
+.wrapper{
+  background-color: #D3D3D3;
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+// /* Owner Show =========================== */
+.row{
+  border: 1px solid red;
+}
+.col-md-12{
+  text-align: center;
+  // border: 1px solid blue;
+}
+.col-md-6{
+  margin-top: 20px;
+  text-align: center;
+  // border: 1px solid blue;
+}
+.btn{
+  color:white;
+}
+.btn:hover{
+  color:yellow;
+}
