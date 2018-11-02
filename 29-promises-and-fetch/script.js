@@ -50,11 +50,14 @@ function getAnimals(){
   })
 }
 
+function getContainer(){
+  return document.querySelector('.container')
+}
+
 function render(animal){
-  let containerEl = document.querySelector('.container')
   let string = `<li>${animal.name}</li>
   <img src=${animal.img}>`
-  containerEl.innerHTML += string
+  getContainer().innerHTML += string
 }
 
 
