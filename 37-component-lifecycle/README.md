@@ -12,14 +12,14 @@
 
 ## Lifecycle Methods only for class components
 
+#### Setting Initial State using Props
+
 ### Creation
 - `componentDidMount()`
  - fetch
  - add extra event listeners
  - set up timers
  - things that require the DOM
-
-#### Setting Initial State using Props
 
 ### Update
 - `render()`
@@ -47,3 +47,8 @@
 - `componentWillMount()`
 - `componentWillReceiveProps()`
 - `componentWillUpdate()`
+
+
+## Async React
+## React Under the Hood
+## Code Challenge Practice > Sushi Saga, Pokemon Searcher, and Boozer
