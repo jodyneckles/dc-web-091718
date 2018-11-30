@@ -12,7 +12,29 @@ class LoginForm extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleLoginSubmit = () => {};
+  handleLoginSubmit = () => {
+    console.log('attempting to log in')
+    fetch(`http://localhost:3000/api/v1/login`, {
+    	method:"POST",
+    	headers: {
+    		"Content-type" : "application/json",
+    		"Accept" : "application/json"
+    	},
+    	body: JSON.stringify({
+    		username: this.state.username,
+    		password: this.state.password
+    	})
+    }).then(res => res.json())
+    .then(data => {
+      if(data.error){
+        alert('incorrect username or password')
+      }else{
+        localStorage.setItem('token', data.token)
+        this.props.updateCurrentUser(data.user)
+        //set the state of currentUser, to be the user that is logged
+      }
+    })
+  };
 
   render() {
     return (

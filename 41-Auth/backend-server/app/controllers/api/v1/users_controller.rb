@@ -1,7 +1,11 @@
 class Api::V1::UsersController < ApplicationController
 
   def profile
-    render json: { user: UserSerializer.new() }, status: :accepted
+    #if the front end has a token, we send back @user
+    token = request.headers['Authentication'].split(' ')[1]
+    payload = decode(token)
+    current_user = User.find(payload["user"])
+    render json: { user: current_user }, status: :accepted
   end
 
   # Sign Up
