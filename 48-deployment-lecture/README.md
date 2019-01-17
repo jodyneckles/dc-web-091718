@@ -22,7 +22,7 @@ Backend:
   heroku:
     - heroku create
     - git push heroku master
-    - heroku run rails migrate and seed
+    - heroku run rake db:migrate and db:seed
     - heroku open
 
     optional:
